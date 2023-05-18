@@ -76,7 +76,7 @@ def show_post(post_id: int):
 def delete_post(post_id: int):
 
     post: Posts = db.get_or_404(Posts, post_id, description="Неверно указан ID поста")
-    if request.method == "POST":
+    if request.method == "GET":
 
         return render_template("show_post.html", post=post)
 
